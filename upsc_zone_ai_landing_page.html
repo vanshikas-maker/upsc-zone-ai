@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPSC ZONE AI — Master UPSC Prelims & Mains with Precision AI</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Chart.js for Interactive Visual Analytics -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#070B19',
+                            card: '#0F172A',
+                            navy: '#1E293B',
+                            accent: '#00F5D4',
+                            amber: '#FF9F1C',
+                            blue: '#3B82F6',
+                            purple: '#8B5CF6'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    animation: {
+                        'pulse-glow': 'pulseGlow 3s infinite',
+                        'float': 'float 4s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        pulseGlow: {
+                            '0%, 100%': { opacity: 0.6, transform: 'scale(1)' },
+                            '50%': { opacity: 1, transform: 'scale(1.03)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #070B19;
+            color: #F8FAFC;
+            overflow-x: hidden;
+        }
+
+        /* Glassmorphism Styles */
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-panel-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-panel-hover:hover {
+            border-color: rgba(0, 245, 212, 0.3);
+            box-shadow: 0 10px 30px -10px rgba(0, 245, 212, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .glow-text {
+            text-shadow: 0 0 20px rgba(0, 245, 212, 0.4);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #070B19;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1E293B;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00F5D4;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-accent selection:text-brand-dark">
+
+    <!-- Top Announcement Banner -->
+    <div class="bg-gradient-to-r from-brand-purple via-brand-blue to-brand-accent text-brand-dark font-semibold text-xs md:text-sm py-2 px-4 text-center flex items-center justify-center gap-2 shadow-lg z-50 relative">
+        <span class="bg-black/20 px-2 py-0.5 rounded-full text-[10px] uppercase tracking-wider font-extrabold text-white">NEW 3.0 RELEASE</span>
+        <span>AI Mains Evaluator upgraded with CSE 2025 Model Answers & Model Essay Rubric!</span>
+        <a href="#mains-evaluator" class="underline hover:text-white transition font-bold hidden sm:inline">Try Demo Now &rarr;</a>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-40 w-full backdrop-blur-md bg-brand-dark/80 border-b border-white/10 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-accent via-brand-blue to-brand-purple p-0.5 shadow-lg group-hover:scale-105 transition">
+                    <div class="w-full h-full bg-brand-dark rounded-[10px] flex items-center justify-center">
+                        <i class="fa-solid font-bold text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-blue text-xl">U</i>
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <div class="flex items-center gap-2">
+                        <span class="font-extrabold text-xl tracking-tight text-white">UPSC ZONE</span>
+                        <span class="bg-brand-accent/10 border border-brand-accent/40 text-brand-accent text-[10px] font-mono px-2 py-0.5 rounded-full uppercase tracking-wider flex items-center gap-1">
+                            <span class="w-1.5 h-1.5 rounded-full bg-brand-accent animate-ping"></span> AI 3.0
+                        </span>
+                    </div>
+                    <span class="text-[10px] text-slate-400 -mt-1 tracking-wider uppercase font-medium">Precision Exam Tech</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="#features" class="hover:text-brand-accent transition flex items-center gap-1.5"><i class="fa-solid fa-microchip text-xs text-brand-accent"></i> Features</a>
+                <a href="#mains-evaluator" class="hover:text-brand-accent transition flex items-center gap-1.5"><i class="fa-solid fa-pen-nib text-xs text-brand-amber"></i> AI Evaluator</a>
+                <a href="#heatmap" class="hover:text-brand-accent transition flex items-center gap-1.5"><i class="fa-solid fa-chart-line text-xs text-brand-blue"></i> PYQ Heatmap</a>
+                <a href="#pricing" class="hover:text-brand-accent transition">Pricing</a>
+                <a href="#testimonials" class="hover:text-brand-accent transition">Toppers' Choice</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="hidden sm:flex items-center gap-4">
+                <button onclick="openModal('login')" class="text-sm font-semibold text-slate-300 hover:text-white px-4 py-2 transition">Log In</button>
+                <a href="#hero-demo" class="relative group overflow-hidden rounded-xl p-[1px] font-semibold text-sm">
+                    <span class="absolute inset-0 bg-gradient-to-r from-brand-accent via-brand-blue to-brand-purple rounded-xl"></span>
+                    <span class="relative block px-5 py-2.5 bg-brand-dark rounded-[11px] text-white group-hover:bg-opacity-0 transition duration-300 font-bold">
+                        Start Free AI Trial <i class="fa-solid fa-arrow-right ml-1 text-xs text-brand-accent group-hover:text-white"></i>
+                    </span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button onclick="toggleMobileMenu()" class="lg:hidden text-slate-300 hover:text-white p-2">
+                <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-brand-card/95 border-b border-white/10 px-6 py-6 space-y-4 text-slate-200">
+            <a href="#features" onclick="toggleMobileMenu()" class="block py-2 font-medium">Features</a>
+            <a href="#mains-evaluator" onclick="toggleMobileMenu()" class="block py-2 font-medium">AI Evaluator</a>
+            <a href="#heatmap" onclick="toggleMobileMenu()" class="block py-2 font-medium">PYQ Heatmap</a>
+            <a href="#pricing" onclick="toggleMobileMenu()" class="block py-2 font-medium">Pricing</a>
+            <a href="#testimonials" onclick="toggleMobileMenu()" class="block py-2 font-medium">Toppers' Reviews</a>
+            <div class="pt-4 border-t border-white/10 flex flex-col gap-3">
+                <button onclick="openModal('login'); toggleMobileMenu()" class="w-full text-center py-2.5 rounded-lg bg-white/5 border border-white/10 font-semibold">Log In</button>
+                <a href="#hero-demo" onclick="toggleMobileMenu()" class="w-full text-center py-2.5 rounded-lg bg-gradient-to-r from-brand-accent to-brand-blue text-brand-dark font-bold">Start Free AI Trial</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[90vh] pt-12 pb-20 overflow-hidden flex items-center">
+        <!-- Ambient Background Glows -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-blue/15 rounded-full blur-[140px] pointer-events-none"></div>
+        <div class="absolute top-1/3 right-10 w-[400px] h-[400px] bg-brand-accent/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Hero Column -->
+                <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-brand-accent">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> AI-POWERED UPSC PREPARATION PLATFORM
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.15]">
+                        Master UPSC Prelims & Mains with <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent via-teal-300 to-brand-blue glow-text">Precision AI</span>
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-slate-300 font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        Evaluates Mains answers in 30 seconds with 98.4% accuracy, generates targeted mock tests from 15 years of PYQs, and condenses Hindu/IE editorials into actionable bullet notes.
+                    </p>
+
+                    <!-- Dual CTA & Video Button -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#mains-evaluator" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-brand-accent to-brand-blue text-brand-dark font-bold text-base shadow-lg shadow-brand-accent/20 hover:shadow-brand-accent/40 hover:scale-[1.02] transition flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-bolt"></i> Start Free AI Evaluation
+                        </a>
+                        <button onclick="openModal('demoVideo')" class="w-full sm:w-auto px-7 py-4 rounded-xl bg-slate-800/80 border border-slate-700 hover:bg-slate-800 text-white font-semibold text-base transition flex items-center justify-center gap-3 group">
+                            <span class="w-8 h-8 rounded-full bg-brand-accent/20 flex items-center justify-center text-brand-accent group-hover:scale-110 transition">
+                                <i class="fa-solid fa-play text-xs"></i>
+                            </span>
+                            Watch 2-Min Demo
+                        </button>
+                    </div>
+
+                    <!-- Live Counter Stats Bar -->
+                    <div class="pt-8 border-t border-white/10 grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0 text-left">
+                        <div>
+                            <div class="text-2xl lg:text-3xl font-extrabold text-white font-mono">50,000+</div>
+                            <div class="text-xs text-slate-400 font-medium">Active Aspirants</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl lg:text-3xl font-extrabold text-brand-accent font-mono">98.4%</div>
+                            <div class="text-xs text-slate-400 font-medium">Evaluation Accuracy</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl lg:text-3xl font-extrabold text-brand-amber font-mono">450k+</div>
+                            <div class="text-xs text-slate-400 font-medium">Answers Evaluated</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Hero Column: Interactive AI Assessment Demo Card -->
+                <div class="lg:col-span-5" id="hero-demo">
+                    <div class="glass-panel rounded-2xl p-6 relative border border-white/15 shadow-2xl animate-float">
+                        
+                        <!-- Header badge -->
+                        <div class="flex items-center justify-between pb-4 border-b border-white/10 mb-5">
+                            <div class="flex items-center gap-2">
+                                <span class="w-3 h-3 rounded-full bg-red-500 inline-block"></span>
+                                <span class="w-3 h-3 rounded-full bg-yellow-500 inline-block"></span>
+                                <span class="w-3 h-3 rounded-full bg-green-500 inline-block"></span>
+                                <span class="text-xs font-mono text-slate-400 ml-2">upsc-ai-engine-v3.0</span>
+                            </div>
+                            <span class="text-[11px] bg-brand-accent/20 text-brand-accent px-2.5 py-1 rounded-full font-mono font-bold">LIVE INTERACTIVE DEMO</span>
+                        </div>
+
+                        <!-- Interactive Mini Tester inside Hero -->
+                        <div class="space-y-4">
+                            <div class="text-xs uppercase tracking-wider font-semibold text-slate-400">Try Sample Prelims Instant AI Eliminator:</div>
+                            
+                            <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 text-xs text-slate-200 font-medium leading-relaxed">
+                                <strong class="text-brand-amber">Q.</strong> Consider the following regarding the <em>Monetary Policy Committee (MPC)</em>:
+                                <ol class="list-decimal ml-4 mt-1 text-slate-300 space-y-0.5">
+                                    <li>It decides RBI's benchmark interest rates.</li>
+                                    <li>It is a 12-member body including the Governor.</li>
+                                    <li>It functions under the guidance of Union Finance Minister.</li>
+                                </ol>
+                                <span class="block mt-1 font-semibold text-slate-400">Which statement(s) is/are correct?</span>
+                            </div>
+
+                            <!-- Interactive Options -->
+                            <div class="grid grid-cols-2 gap-2 text-xs font-mono">
+                                <button onclick="checkHeroQuiz(1)" id="hopt-1" class="p-2.5 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-200 text-left border border-slate-700 transition flex items-center justify-between">
+                                    <span>A) 1 only</span>
+                                    <i class="fa-regular fa-circle text-slate-500"></i>
+                                </button>
+                                <button onclick="checkHeroQuiz(2)" id="hopt-2" class="p-2.5 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-200 text-left border border-slate-700 transition flex items-center justify-between">
+                                    <span>B) 1 & 2 only</span>
+                                    <i class="fa-regular fa-circle text-slate-500"></i>
+                                </button>
+                                <button onclick="checkHeroQuiz(3)" id="hopt-3" class="p-2.5 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-200 text-left border border-slate-700 transition flex items-center justify-between">
+                                    <span>C) 2 & 3 only</span>
+                                    <i class="fa-regular fa-circle text-slate-500"></i>
+                                </button>
+                                <button onclick="checkHeroQuiz(4)" id="hopt-4" class="p-2.5 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-200 text-left border border-slate-700 transition flex items-center justify-between">
+                                    <span>D) 1, 2 & 3</span>
+                                    <i class="fa-regular fa-circle text-slate-500"></i>
+                                </button>
+                            </div>
+
+                            <!-- Feedback Output Box -->
+                            <div id="heroQuizFeedback" class="hidden p-3 rounded-xl bg-brand-accent/10 border border-brand-accent/30 text-xs space-y-1">
+                                <div class="font-bold text-brand-accent flex items-center gap-1.5">
+                                    <i class="fa-solid fa-circle-check"></i> Correct Answer: A (1 only)
+                                </div>
+                                <p class="text-slate-300 text-[11px] leading-tight">
+                                    <span class="text-brand-amber font-mono">AI Explanation:</span> Statement 2 is wrong (6 members, not 12). Statement 3 is wrong (functions under RBI Act 1934 framework, not directly Finance Ministry).
+                                </p>
+                            </div>
+
+                            <a href="#mains-evaluator" class="block text-center py-2 text-xs font-semibold text-brand-blue hover:text-brand-accent transition">
+                                Want to test Mains Answer Evaluation instead? <i class="fa-solid fa-arrow-down"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Badges & Institutional Endorsement -->
+    <section class="py-8 border-y border-white/10 bg-brand-card/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-xs font-mono uppercase tracking-widest text-slate-400 mb-6">Trusted by Aspirants from Premier Institutions & Leading Coaching Ecosystems</p>
+            <div class="flex flex-wrap items-center justify-center gap-8 md:gap-16 opacity-70 grayscale hover:grayscale-0 transition-all duration-300">
+                <div class="flex items-center gap-2 text-slate-300 font-bold tracking-tight text-lg"><i class="fa-solid fa-university text-brand-accent"></i> DELHI UNIVERSITY</div>
+                <div class="flex items-center gap-2 text-slate-300 font-bold tracking-tight text-lg"><i class="fa-solid fa-building-columns text-brand-blue"></i> JNU NEW DELHI</div>
+                <div class="flex items-center gap-2 text-slate-300 font-bold tracking-tight text-lg"><i class="fa-solid fa-graduation-cap text-brand-amber"></i> IIT DELHI</div>
+                <div class="flex items-center gap-2 text-slate-300 font-bold tracking-tight text-lg"><i class="fa-solid fa-award text-brand-purple"></i> ALIGARH MUSLIM UNIV.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Interactive Features Grid Section -->
+    <section id="features" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-brand-accent text-xs font-mono uppercase tracking-widest bg-brand-accent/10 px-3 py-1 rounded-full border border-brand-accent/20">Architected for Rank 1 Ambition</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">4 Pillars of AI-Powered UPSC Success</h2>
+                <p class="text-slate-400 text-base">Replaces standard offline coaching friction with instant, objective feedback loops.</p>
+            </div>
+
+            <!-- Feature Cards Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Feature 1 -->
+                <div class="glass-panel glass-panel-hover rounded-2xl p-6 relative flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-accent/10 border border-brand-accent/30 flex items-center justify-center text-brand-accent text-xl">
+                            <i class="fa-solid fa-pen-fancy"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">30-Sec Mains Evaluator</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Upload or type handwritten answers. Get instant page-by-page marking across 6 rubrics: Structure, Content, Context, Diagrams, Ethics & Model Answer map.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs font-mono text-brand-accent">
+                        <span>Model: GPT-4o UPSC Tuned</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="glass-panel glass-panel-hover rounded-2xl p-6 relative flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-blue/10 border border-brand-blue/30 flex items-center justify-center text-brand-blue text-xl">
+                            <i class="fa-solid fa-newspaper"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Editorial Synthesizer</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Transforms dense 10-page Hindu/Indian Express editorials into 3-minute GS Paper tagged bullet points, syllabus mapping, and ready quote snippets.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs font-mono text-brand-blue">
+                        <span>Updated Daily 7:00 AM</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="glass-panel glass-panel-hover rounded-2xl p-6 relative flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-amber/10 border border-brand-amber/30 flex items-center justify-center text-brand-amber text-xl">
+                            <i class="fa-solid fa-fire"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">10-Yr PYQ Heatmapper</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Visual analytics identifying high-yield UPSC trends (e.g. Polity Articles vs. Environment Species) to ensure maximum ROI for revision time.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs font-mono text-brand-amber">
+                        <span>2,500+ Tagged PYQs</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="glass-panel glass-panel-hover rounded-2xl p-6 relative flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-purple/10 border border-brand-purple/30 flex items-center justify-center text-brand-purple text-xl">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">AI Voice Mentor</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Practice real-time oral answer delivery for the UPSC Interview / Personality Test round with real-time feedback on confidence, clarity, and tone.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs font-mono text-brand-purple">
+                        <span>Conversational Voice AI</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Interactive Mains Answer Evaluator Simulator -->
+    <section id="mains-evaluator" class="py-20 bg-brand-card/60 relative border-y border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+                <span class="text-brand-accent text-xs font-mono uppercase tracking-widest bg-brand-accent/10 px-3 py-1 rounded-full border border-brand-accent/20">LIVE INTERACTIVE TOOL</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Experience AI Mains Answer Evaluation</h2>
+                <p class="text-slate-300 text-sm sm:text-base">Paste any sample answer or click a preset to see our rubric radar evaluation in real-time.</p>
+            </div>
+
+            <!-- Evaluator Layout Box -->
+            <div class="grid lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Left Input Panel -->
+                <div class="lg:col-span-7 glass-panel rounded-2xl p-6 space-y-5">
+                    
+                    <div class="flex flex-wrap items-center justify-between gap-4">
+                        <label class="text-xs font-mono text-slate-300 font-bold uppercase tracking-wider">1. Select Target GS Paper</label>
+                        <div class="flex items-center gap-2">
+                            <button onclick="setPaper('GS1')" id="btn-GS1" class="px-3 py-1 rounded-md text-xs font-mono bg-brand-accent text-brand-dark font-bold">GS 1</button>
+                            <button onclick="setPaper('GS2')" id="btn-GS2" class="px-3 py-1 rounded-md text-xs font-mono bg-slate-800 text-slate-300 hover:text-white">GS 2</button>
+                            <button onclick="setPaper('GS3')" id="btn-GS3" class="px-3 py-1 rounded-md text-xs font-mono bg-slate-800 text-slate-300 hover:text-white">GS 3</button>
+                            <button onclick="setPaper('GS4')" id="btn-GS4" class="px-3 py-1 rounded-md text-xs font-mono bg-slate-800 text-slate-300 hover:text-white">GS 4</button>
+                        </div>
+                    </div>
+
+                    <!-- Question Input -->
+                    <div>
+                        <div class="text-xs text-slate-400 mb-1 font-mono">UPSC Question Prompt (15 Marks / 250 Words)</div>
+                        <input type="text" id="evalQuestion" value="Examine the impact of Climate Change on Indian Agriculture. Suggest mitigation strategies." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-accent transition">
+                    </div>
+
+                    <!-- Answer Textarea -->
+                    <div>
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="text-xs text-slate-400 font-mono">Your Draft Answer</span>
+                            <button onclick="loadSampleAnswer()" class="text-xs text-brand-accent hover:underline font-mono"><i class="fa-solid fa-arrows-rotate"></i> Load Sample Strong Answer</button>
+                        </div>
+                        <textarea id="evalAnswer" rows="7" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-4 text-sm text-slate-200 font-sans focus:outline-none focus:border-brand-accent transition leading-relaxed" placeholder="Type or paste your mains answer draft here..."></textarea>
+                    </div>
+
+                    <!-- Action Trigger Button -->
+                    <button onclick="runAIEvaluation()" id="evalBtn" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-brand-accent via-teal-400 to-brand-blue text-brand-dark font-bold text-base shadow-lg hover:opacity-95 transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-microchip"></i> Evaluate Answer Now (Instant AI)
+                    </button>
+                </div>
+
+                <!-- Right Results Radar & Feedback Panel -->
+                <div class="lg:col-span-5 glass-panel rounded-2xl p-6 space-y-6">
+                    <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                        <h3 class="font-bold text-white text-lg flex items-center gap-2">
+                            <i class="fa-solid fa-chart-pie text-brand-accent"></i> AI Evaluation Scorecard
+                        </h3>
+                        <span id="scoreBadge" class="text-2xl font-extrabold text-brand-accent font-mono">8.5/15</span>
+                    </div>
+
+                    <!-- Chart Container -->
+                    <div class="relative w-full h-[220px] flex items-center justify-center">
+                        <canvas id="evalRadarChart"></canvas>
+                    </div>
+
+                    <!-- Qualitative Suggestions Breakdown -->
+                    <div id="evalFeedbackList" class="space-y-3 text-xs">
+                        <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 space-y-1">
+                            <div class="font-bold text-brand-accent flex items-center gap-1">
+                                <i class="fa-solid fa-thumbs-up"></i> Key Strengths Identified
+                            </div>
+                            <p class="text-slate-300">Strong structural intro referencing IPCC 6th Assessment report. Good usage of subheadings for mitigation.</p>
+                        </div>
+                        <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 space-y-1">
+                            <div class="font-bold text-brand-amber flex items-center gap-1">
+                                <i class="fa-solid fa-triangle-exclamation"></i> Missed High-Value Points
+                            </div>
+                            <p class="text-slate-300">Add explicit mention of PM-KUSUM scheme, Climate Smart Agriculture (CSA) frameworks, and Millets (Shree Anna).</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PYQ Heatmap Visualizer Analytics Section -->
+    <section id="heatmap" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-10 items-center">
+                
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-brand-blue text-xs font-mono uppercase tracking-widest bg-brand-blue/10 px-3 py-1 rounded-full border border-brand-blue/20">DATA-DRIVEN UPSC PREP</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Master 10-Year Subject Weightage Heatmap</h2>
+                    <p class="text-slate-300 text-base leading-relaxed">
+                        Don't study blindly. Our AI analyzes trends from 2013-2025 Prelims & Mains to pinpoint high-probability topics so you focus maximum energy where marks actually lie.
+                    </p>
+
+                    <div class="space-y-3 pt-2">
+                        <div class="flex items-center gap-3 text-sm text-slate-300">
+                            <i class="fa-solid fa-circle-check text-brand-accent"></i> Instant topic categorization by high, medium, and low yield.
+                        </div>
+                        <div class="flex items-center gap-3 text-sm text-slate-300">
+                            <i class="fa-solid fa-circle-check text-brand-accent"></i> Maps overlapping Prelims facts with Mains conceptual themes.
+                        </div>
+                        <div class="flex items-center gap-3 text-sm text-slate-300">
+                            <i class="fa-solid fa-circle-check text-brand-accent"></i> Real-time updates right after UPSC releases official papers.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Chart Box -->
+                <div class="lg:col-span-7 glass-panel rounded-2xl p-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <div>
+                            <h3 class="font-bold text-white text-base">UPSC Prelims Question Distribution (2020-2025)</h3>
+                            <p class="text-xs text-slate-400">Hover/click bars to inspect AI topic weightage</p>
+                        </div>
+                        <span class="text-xs bg-brand-blue/20 text-brand-blue font-mono px-3 py-1 rounded-full border border-brand-blue/30">Prelims GS-1</span>
+                    </div>
+
+                    <div class="w-full h-[300px]">
+                        <canvas id="pyqBarChart"></canvas>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Fee Calculator / Plan Selector -->
+    <section id="pricing" class="py-24 bg-brand-card/50 relative border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-12 space-y-4">
+                <span class="text-brand-accent text-xs font-mono uppercase tracking-widest bg-brand-accent/10 px-3 py-1 rounded-full border border-brand-accent/20">AFFORDABLE EXCELLENCE</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Transparent Pricing for Every Aspirant</h2>
+                <p class="text-slate-400 text-base">Saves up to ₹1,50,000 compared to conventional Delhi offline evaluation programs.</p>
+
+                <!-- Billing Toggle -->
+                <div class="flex items-center justify-center gap-4 pt-4">
+                    <span class="text-sm font-semibold text-slate-300" id="monthlyLabel">Monthly</span>
+                    <button onclick="toggleBilling()" id="billingToggle" class="w-14 h-8 rounded-full bg-slate-800 p-1 border border-slate-700 transition relative">
+                        <div id="toggleDot" class="w-6 h-6 rounded-full bg-brand-accent transition transform translate-x-0"></div>
+                    </button>
+                    <span class="text-sm font-semibold text-slate-300 flex items-center gap-1.5" id="annualLabel">
+                        Annual Unlimited <span class="bg-brand-amber/20 text-brand-amber text-[10px] px-2 py-0.5 rounded-full font-bold">SAVE 35%</span>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Pricing Cards Grid -->
+            <div class="grid md:grid-cols-3 gap-8 items-stretch">
+                
+                <!-- Plan 1 -->
+                <div class="glass-panel glass-panel-hover rounded-2xl p-8 flex flex-col justify-between border-slate-800">
+                    <div class="space-y-6">
+                        <div class="space-y-2">
+                            <h3 class="text-xl font-bold text-white">Prelims Booster</h3>
+                            <p class="text-slate-400 text-xs">Ideal for candidates targeting Prelims 2026 clearing.</p>
+                        </div>
+                        <div class="flex items-baseline gap-1">
+                            <span class="text-4xl font-black text-white font-mono" id="price-p1">₹999</span>
+                            <span class="text-slate-400 text-xs" id="period-p1">/month</span>
+                        </div>
+                        <ul class="space-y-3 text-xs text-slate-300 border-t border-white/10 pt-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-accent"></i> Unlimited AI Mock Tests</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-accent"></i> Daily Editorial Bullet Summaries</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-accent"></i> 10-Yr PYQ Heatmap Analysis</li>
+                            <li class="flex items-center gap-2 text-slate-500"><i class="fa-solid fa-xmark"></i> Mains Answer Evaluator (Locked)</li>
+                        </ul>
+                    </div>
+                    <button onclick="openModal('enroll')" class="w-full py-3 mt-8 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm transition">Select Prelims Plan</button>
+                </div>
+
+                <!-- Plan 2 (Highlighted) -->
+                <div class="glass-panel glass-panel-hover rounded-2xl p-8 flex flex-col justify-between border-brand-accent relative shadow-2xl scale-105 bg-slate-900/90">
+                    <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-brand-accent to-brand-blue text-brand-dark px-4 py-1 rounded-full text-[11px] font-extrabold uppercase tracking-wider">
+                        MOST POPULAR FOR TOPPERS
+                    </div>
+                    <div class="space-y-6">
+                        <div class="space-y-2">
+                            <h3 class="text-xl font-bold text-white">Mains Mastermind</h3>
+                            <p class="text-slate-400 text-xs">Comprehensive GS 1-4 & Essay AI evaluation engine.</p>
+                        </div>
+                        <div class="flex items-baseline gap-1">
+                            <span class="text-4xl font-black text-brand-accent font-mono" id="price-p2">₹2,499</span>
+                            <span class="text-slate-400 text-xs" id="period-p2">/month</span>
+                        </div>
+                        <ul class="space-y-3 text-xs text-slate-300 border-t border-white/10 pt-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-accent"></i> <strong>Everything in Prelims Plan</strong></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-accent"></i> <strong>Unlimited Mains Answers Evaluation</strong></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-accent"></i> Page-by-page diagram & model answer map</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-accent"></i> Essay Rubric & Case Study Assistant</li>
+                        </ul>
+                    </div>
+                    <button onclick="openModal('enroll')" class="w-full py-3.5 mt-8 rounded-xl bg-gradient-to-r from-brand-accent to-brand-blue text-brand-dark font-extrabold text-sm shadow-lg hover:opacity-95 transition">Get Mains Mastermind</button>
+                </div>
+
+                <!-- Plan 3 -->
+                <div class="glass-panel glass-panel-hover rounded-2xl p-8 flex flex-col justify-between border-slate-800">
+                    <div class="space-y-6">
+                        <div class="space-y-2">
+                            <h3 class="text-xl font-bold text-white">Ultimate Suite</h3>
+                            <p class="text-slate-400 text-xs">Includes AI Voice Interview mentor & human mentor review.</p>
+                        </div>
+                        <div class="flex items-baseline gap-1">
+                            <span class="text-4xl font-black text-white font-mono" id="price-p3">₹3,999</span>
+                            <span class="text-slate-400 text-xs" id="period-p3">/month</span>
+                        </div>
+                        <ul class="space-y-3 text-xs text-slate-300 border-t border-white/10 pt-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-accent"></i> Everything in Mains Mastermind</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-accent"></i> AI Voice Interview Personality Mentor</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-accent"></i> 1-on-1 Monthly Ex-Civil Servant Strategy Call</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-accent"></i> Priority WhatsApp Evaluation Queue</li>
+                        </ul>
+                    </div>
+                    <button onclick="openModal('enroll')" class="w-full py-3 mt-8 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm transition">Select Ultimate Plan</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof & Toppers Section -->
+    <section id="testimonials" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="text-brand-amber text-xs font-mono uppercase tracking-widest bg-brand-amber/10 px-3 py-1 rounded-full border border-brand-amber/20">REAL RANK HOLDERS</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Tested and Endorsed by UPSC Rankers</h2>
+                <p class="text-slate-400 text-base">Hear how AI feedback transformed their answer structure and speed.</p>
+            </div>
+
+            <!-- Testimonial Grid -->
+            <div class="grid md:grid-cols-3 gap-6">
+                
+                <div class="glass-panel p-6 rounded-2xl flex flex-col justify-between space-y-4">
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-1 text-brand-amber text-xs">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-300 text-xs italic leading-relaxed">
+                            "The 30-second Mains answer evaluation was a game-changer. Offline test series took 12 days to return copy; UPSC ZONE AI gave me feedback within seconds while my mind was still fresh on the topic."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                        <div class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center font-bold text-brand-accent">AK</div>
+                        <div>
+                            <div class="font-bold text-white text-sm">Ananya K.</div>
+                            <div class="text-[11px] text-brand-accent font-mono">AIR 12, CSE 2024</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-panel p-6 rounded-2xl flex flex-col justify-between space-y-4">
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-1 text-brand-amber text-xs">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-300 text-xs italic leading-relaxed">
+                            "The Daily Editorial Synthesizer saved me 2 hours every morning. Instead of making lengthy manual notes from The Hindu, I used the auto-tagged GS bullet points directly in my revisions."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                        <div class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center font-bold text-brand-blue">RS</div>
+                        <div>
+                            <div class="font-bold text-white text-sm">Rahul Sharma</div>
+                            <div class="text-[11px] text-brand-blue font-mono">AIR 45, CSE 2024</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-panel p-6 rounded-2xl flex flex-col justify-between space-y-4">
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-1 text-brand-amber text-xs">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-300 text-xs italic leading-relaxed">
+                            "The PYQ Heatmap stopped me from wasting time on low-yield subjects. I focused heavily on high-probability Polity and Environment themes suggested by the AI."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                        <div class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center font-bold text-brand-purple">PM</div>
+                        <div>
+                            <div class="font-bold text-white text-sm">Priya M.</div>
+                            <div class="text-[11px] text-brand-purple font-mono">AIR 89, CSE 2024</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Banner -->
+    <section class="py-16 relative overflow-hidden">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-panel rounded-3xl p-10 text-center relative overflow-hidden border border-brand-accent/30 bg-gradient-to-br from-brand-card via-slate-900 to-brand-dark">
+                <div class="relative z-10 space-y-6">
+                    <h2 class="text-3xl sm:text-4xl font-black text-white">Start Accelerating Your UPSC Journey Today</h2>
+                    <p class="text-slate-300 max-w-xl mx-auto text-sm sm:text-base">
+                        Join 50,000+ aspirants evaluating Mains answers, practicing targeted tests, and mastering editorials with precision AI.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <a href="#mains-evaluator" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-brand-accent to-brand-blue text-brand-dark font-bold text-base shadow-xl hover:scale-105 transition">
+                            Evaluate Free Answer Now
+                        </a>
+                        <button onclick="openModal('enroll')" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-800 text-white font-bold text-base hover:bg-slate-700 transition">
+                            Create Free Aspirant Account
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark border-t border-white/10 pt-16 pb-12 text-slate-400 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8 pb-12 border-b border-white/10">
+                
+                <div class="col-span-2 space-y-4">
+                    <div class="flex items-center gap-2">
+                        <span class="font-bold text-white text-lg">UPSC ZONE AI</span>
+                        <span class="bg-brand-accent/20 text-brand-accent text-[10px] font-mono px-2 py-0.5 rounded-full">v3.0</span>
+                    </div>
+                    <p class="text-slate-400 max-w-sm leading-relaxed">
+                        Next-generation AI learning environment designed for Civil Services Examination aspirants in India.
+                    </p>
+                    <div class="flex items-center gap-3 text-slate-300">
+                        <a href="#" class="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center hover:bg-brand-accent hover:text-brand-dark transition"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center hover:bg-brand-accent hover:text-brand-dark transition"><i class="fa-brands fa-telegram"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center hover:bg-brand-accent hover:text-brand-dark transition"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center hover:bg-brand-accent hover:text-brand-dark transition"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="font-bold text-white uppercase font-mono tracking-wider">AI Tools</div>
+                    <ul class="space-y-2">
+                        <li><a href="#mains-evaluator" class="hover:text-white transition">Mains Answer Evaluator</a></li>
+                        <li><a href="#hero-demo" class="hover:text-white transition">Prelims Mock Generator</a></li>
+                        <li><a href="#heatmap" class="hover:text-white transition">PYQ Heatmap Analytics</a></li>
+                        <li><a href="#features" class="hover:text-white transition">Editorial Synthesizer</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="font-bold text-white uppercase font-mono tracking-wider">Resources</div>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition">CSE 2026 Strategy Guide</a></li>
+                        <li><a href="#" class="hover:text-white transition">Model Answer Repository</a></li>
+                        <li><a href="#" class="hover:text-white transition">Syllabus Breakdown PDF</a></li>
+                        <li><a href="#" class="hover:text-white transition">Topper Answer Copies</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="font-bold text-white uppercase font-mono tracking-wider">Legal & Trust</div>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-white transition">AI Ethics Disclaimer</a></li>
+                        <li><a href="#" class="hover:text-white transition">UPSC Compliance Note</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-slate-500">
+                <div>&copy; 2026 UPSC ZONE AI Technologies Inc. All rights reserved. Designed for Web Home UI Designer Challenge.</div>
+                <div class="text-[11px]">Not affiliated with Union Public Service Commission (UPSC). Independent AI Exam Tech Platform.</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Universal Interactive Modal -->
+    <div id="modalBackdrop" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+        <div class="glass-panel w-full max-w-md rounded-2xl p-6 relative border border-white/20 shadow-2xl">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white"><i class="fa-solid fa-xmark text-lg"></i></button>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <!-- Application Dynamic JavaScript Logic -->
+    <script>
+        // --- 1. Mobile Menu Toggle ---
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // --- 2. Interactive Hero Mini Quiz Handler ---
+        function checkHeroQuiz(option) {
+            const feedback = document.getElementById('heroQuizFeedback');
+            feedback.classList.remove('hidden');
+
+            for (let i = 1; i <= 4; i++) {
+                const btn = document.getElementById(`hopt-${i}`);
+                btn.className = "p-2.5 rounded-lg bg-slate-800/80 text-slate-400 text-left border border-slate-700 transition flex items-center justify-between opacity-50";
+            }
+
+            const chosen = document.getElementById(`hopt-${option}`);
+            if (option === 1) {
+                chosen.className = "p-2.5 rounded-lg bg-brand-accent/20 text-brand-accent text-left border border-brand-accent transition flex items-center justify-between font-bold opacity-100";
+            } else {
+                chosen.className = "p-2.5 rounded-lg bg-red-500/20 text-red-400 text-left border border-red-500 transition flex items-center justify-between opacity-100";
+                document.getElementById('hopt-1').className = "p-2.5 rounded-lg bg-brand-accent/20 text-brand-accent text-left border border-brand-accent transition flex items-center justify-between font-bold opacity-100";
+            }
+        }
+
+        // --- 3. Interactive Mains Answer Evaluator Logic & Radar Chart ---
+        let currentPaper = 'GS1';
+        let evalRadarChart = null;
+
+        const sampleAnswers = {
+            GS1: "Climate change poses a severe challenge to Indian agriculture, impacting over 50% of the workforce dependent on agrarian livelihoods. Rising temperatures and erratic monsoons lead to crop yield drops (estimated 10-25% by 2050 by IPCC). Key impacts include heatwaves scorching wheat yields in North India and flash floods in coastal belts.\n\nMitigation Strategies:\n1. Climate Smart Agriculture (CSA): Promoting drought-resistant crop varieties like Millets (Shree Anna).\n2. Irrigation Efficiency: Expanding PM Krishi Sinchayee Yojana (Micro-irrigation/Drip irrigation).\n3. Soil Health: Soil Health Card Scheme to balance fertilizer usage.",
+            GS2: "The Governor's office under Article 153 has recently been a flashpoint between Raj Bhavan and elected State Executives. Key friction points include delay in assent to bills (Article 200) and discretionary powers during floor tests.\n\nRecommendations:\n- Sarkaria Commission: Appointees must be eminent persons outside politics.\n- Punchhi Commission: Fixed tenure for Governors and clear 30-day timeline for bill assent.",
+            GS3: "Direct Benefit Transfer (DBT) empowered by Aadhaar-JAM trinity has revolutionized welfare delivery by plugging leakages ($27 billion saved according to Govt reports).\n\nChallenges:\n- Digital divide in rural regions\n- Exclusion errors due to biometric failure.",
+            GS4: "In public administration, conflict between personal ethics and organizational duty tests integrity. An officer must adhere to Constitutional principles, transparency under RTI, and public service neutrality above personal convenience."
+        };
+
+        function setPaper(paper) {
+            currentPaper = paper;
+            ['GS1', 'GS2', 'GS3', 'GS4'].forEach(p => {
+                const btn = document.getElementById(`btn-${p}`);
+                if (p === paper) {
+                    btn.className = "px-3 py-1 rounded-md text-xs font-mono bg-brand-accent text-brand-dark font-bold";
+                } else {
+                    btn.className = "px-3 py-1 rounded-md text-xs font-mono bg-slate-800 text-slate-300 hover:text-white";
+                }
+            });
+            loadSampleAnswer();
+        }
+
+        function loadSampleAnswer() {
+            document.getElementById('evalAnswer').value = sampleAnswers[currentPaper] || sampleAnswers['GS1'];
+        }
+
+        function initRadarChart() {
+            const ctx = document.getElementById('evalRadarChart').getContext('2d');
+            evalRadarChart = new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: ['Structure', 'Context', 'Diagrams', 'Facts/Data', 'Ethics/Flow', 'UPSC Alignment'],
+                    datasets: [{
+                        label: 'Evaluated Rubric Score',
+                        data: [8.5, 9.0, 6.0, 8.0, 8.5, 9.0],
+                        backgroundColor: 'rgba(0, 245, 212, 0.2)',
+                        borderColor: '#00F5D4',
+                        pointBackgroundColor: '#00F5D4',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            angleLines: { color: 'rgba(255,255,255,0.1)' },
+                            grid: { color: 'rgba(255,255,255,0.1)' },
+                            pointLabels: { color: '#94A3B8', font: { size: 10 } },
+                            ticks: { display: false, max: 10, min: 0 }
+                        }
+                    },
+                    plugins: { legend: { display: false } }
+                }
+            });
+        }
+
+        function runAIEvaluation() {
+            const btn = document.getElementById('evalBtn');
+            btn.innerHTML = `<i class="fa-solid fa-spinner animate-spin"></i> AI Analyzing Structure & Model Answer Rubric...`;
+            
+            setTimeout(() => {
+                btn.innerHTML = `<i class="fa-solid fa-microchip"></i> Evaluate Answer Now (Instant AI)`;
+                
+                // Randomize realistic score slightly for interactive effect
+                const score = (7.5 + Math.random() * 2).toFixed(1);
+                document.getElementById('scoreBadge').innerText = `${score}/15`;
+
+                const randomScores = [
+                    (7 + Math.random() * 2.5).toFixed(1),
+                    (8 + Math.random() * 2).toFixed(1),
+                    (5 + Math.random() * 4).toFixed(1),
+                    (7.5 + Math.random() * 2).toFixed(1),
+                    (8 + Math.random() * 1.5).toFixed(1),
+                    (8.5 + Math.random() * 1.5).toFixed(1)
+                ];
+
+                evalRadarChart.data.datasets[0].data = randomScores;
+                evalRadarChart.update();
+            }, 800);
+        }
+
+        // --- 4. Interactive PYQ Bar Chart Analytics ---
+        function initPYQChart() {
+            const ctx = document.getElementById('pyqBarChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Polity & Gov', 'Economy', 'Environment', 'Modern History', 'Sci & Tech', 'Geography', 'Art & Culture'],
+                    datasets: [{
+                        label: 'Average Questions per Prelims Paper',
+                        data: [18, 16, 17, 12, 13, 14, 10],
+                        backgroundColor: [
+                            '#00F5D4', '#3B82F6', '#10B981', '#FF9F1C', '#8B5CF6', '#06B6D4', '#EC4899'
+                        ],
+                        borderRadius: 6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: {
+                            grid: { color: 'rgba(255,255,255,0.05)' },
+                            ticks: { color: '#94A3B8' }
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: { color: '#94A3B8', font: { size: 10 } }
+                        }
+                    }
+                }
+            });
+        }
+
+        // --- 5. Pricing Toggle Handler ---
+        let isAnnual = false;
+        function toggleBilling() {
+            isAnnual = !isAnnual;
+            const dot = document.getElementById('toggleDot');
+            
+            if (isAnnual) {
+                dot.classList.add('translate-x-6');
+                document.getElementById('price-p1').innerText = '₹649';
+                document.getElementById('price-p2').innerText = '₹1,599';
+                document.getElementById('price-p3').innerText = '₹2,599';
+                document.getElementById('period-p1').innerText = '/mo (billed annually)';
+                document.getElementById('period-p2').innerText = '/mo (billed annually)';
+                document.getElementById('period-p3').innerText = '/mo (billed annually)';
+            } else {
+                dot.classList.remove('translate-x-6');
+                document.getElementById('price-p1').innerText = '₹999';
+                document.getElementById('price-p2').innerText = '₹2,499';
+                document.getElementById('price-p3').innerText = '₹3,999';
+                document.getElementById('period-p1').innerText = '/month';
+                document.getElementById('period-p2').innerText = '/month';
+                document.getElementById('period-p3').innerText = '/month';
+            }
+        }
+
+        // --- 6. Universal Modal Controller ---
+        function openModal(type) {
+            const backdrop = document.getElementById('modalBackdrop');
+            const content = document.getElementById('modalContent');
+            backdrop.classList.remove('hidden');
+
+            if (type === 'login') {
+                content.innerHTML = `
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-bold text-white">Log In to UPSC ZONE AI</h3>
+                        <p class="text-xs text-slate-400">Access saved answer evaluations and syllabus progress.</p>
+                        <input type="email" placeholder="Aspirant Email Address" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-sm text-white focus:outline-none focus:border-brand-accent">
+                        <input type="password" placeholder="Password" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-sm text-white focus:outline-none focus:border-brand-accent">
+                        <button onclick="closeModal()" class="w-full py-3 rounded-xl bg-gradient-to-r from-brand-accent to-brand-blue text-brand-dark font-bold text-sm">Sign In</button>
+                    </div>
+                `;
+            } else if (type === 'enroll') {
+                content.innerHTML = `
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-bold text-white">Start 7-Day Free AI Trial</h3>
+                        <p class="text-xs text-slate-400">Instant access to Mains Answer Evaluator & Prelims PYQ heatmap.</p>
+                        <input type="text" placeholder="Full Name" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-sm text-white focus:outline-none focus:border-brand-accent">
+                        <input type="email" placeholder="Email Address" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-sm text-white focus:outline-none focus:border-brand-accent">
+                        <input type="tel" placeholder="Mobile Number (for WhatsApp AI alerts)" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-sm text-white focus:outline-none focus:border-brand-accent">
+                        <button onclick="closeModal()" class="w-full py-3 rounded-xl bg-gradient-to-r from-brand-accent to-brand-blue text-brand-dark font-bold text-sm">Activate Free AI Trial</button>
+                    </div>
+                `;
+            } else if (type === 'demoVideo') {
+                content.innerHTML = `
+                    <div class="space-y-4 text-center">
+                        <h3 class="text-lg font-bold text-white">UPSC ZONE AI Demo Walkthrough</h3>
+                        <div class="w-full h-48 bg-slate-900 rounded-xl flex items-center justify-center border border-slate-800 text-slate-400">
+                            <div class="space-y-2">
+                                <i class="fa-solid fa-circle-play text-4xl text-brand-accent"></i>
+                                <p class="text-xs">Interactive Demo Player Simulation</p>
+                            </div>
+                        </div>
+                        <button onclick="closeModal()" class="px-6 py-2 rounded-xl bg-slate-800 text-white text-xs font-semibold">Close Preview</button>
+                    </div>
+                `;
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('modalBackdrop').classList.add('hidden');
+        }
+
+        // Close modal on backdrop click
+        document.getElementById('modalBackdrop').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+
+        // Initialize Charts and Defaults on Load
+        window.onload = function() {
+            initRadarChart();
+            initPYQChart();
+            loadSampleAnswer();
+        };
+    </script>
+</body>
+</html>
